@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest Version="7.0" ExtensionBundleId="com.premiere.aicutter" ExtensionBundleVersion="1.0.0"
+    ExtensionBundleName="AI Video Cutter Panel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <ExtensionList>
+        <Extension Id="com.premiere.aicutter.panel" Version="1.0.0" />
+    </ExtensionList>
+    
+    <ExecutionEnvironment>
+        <HostList>
+            <!-- Premiere Pro (PPRO) 2020-2026+ qo'llab-quvvatlashi -->
+            <Host Name="PPRO" Version="[14.0,99.9]" />
+        </HostList>
+        <LocaleList>
+            <Locale Code="All" />
+        </LocaleList>
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="9.0" />
+        </RequiredRuntimeList>
+    </ExecutionEnvironment>
+    
+    <DispatchInfoList>
+        <Extension Id="com.premiere.aicutter.panel">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./index.html</MainPath>
+                    <ScriptPath>./jsx/hostscript.jsx</ScriptPath>
+                    <CEPEngine>
+                        <CommandLine>
+                            <!-- Node.js integratsiyasini faollashtirish -->
+                            <Parameter>--enable-nodejs</Parameter>
+                            <Parameter>--mixed-context</Parameter>
+                        </CommandLine>
+                    </CEPEngine>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <Type>Panel</Type>
+                    <Menu>AI Video Cutter</Menu>
+                    <Geometry>
+                        <Size>
+                            <Width>380</Width>
+                            <Height>650</Height>
+                        </Size>
+                        <MinSize>
+                            <Width>320</Width>
+                            <Height>480</Height>
+                        </MinSize>
+                        <MaxSize>
+                            <Width>800</Width>
+                            <Height>1200</Height>
+                        </MaxSize>
+                    </Geometry>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
+</ExtensionManifest>
